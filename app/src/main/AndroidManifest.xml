@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="clifford.alan.lihctool" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".employmentQuestion"
+            android:label="@string/title_activity_employment_question"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="clifford.alan.lihctool.MainActivity" />
+        </activity>
+        <activity
+            android:name=".PartnerEmploymentQuestion"
+            android:label="@string/title_activity_partner_employment_question"
+            android:parentActivityName=".employmentQuestion" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="clifford.alan.lihctool.employmentQuestion" />
+        </activity>
+        <activity
+            android:name=".BenefitsQuestion"
+            android:label="@string/title_activity_benefits_question"
+            android:parentActivityName=".PartnerEmploymentQuestion" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="clifford.alan.lihctool.PartnerEmploymentQuestion" />
+        </activity>
+        <activity
+            android:name=".DisabilityQuestion"
+            android:label="@string/title_activity_disability_question"
+            android:parentActivityName=".BenefitsQuestion" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="clifford.alan.lihctool.BenefitsQuestion" />
+        </activity>
+        <activity
+            android:name=".PaymentMethodQuestion"
+            android:label="@string/title_activity_payment_method_question"
+            android:parentActivityName=".DisabilityQuestion" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="clifford.alan.lihctool.DisabilityQuestion" />
+        </activity>
+        <activity
+            android:name=".Results"
+            android:label="@string/title_activity_results"
+            android:parentActivityName=".PaymentMethodQuestion" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="clifford.alan.lihctool.PaymentMethodQuestion" />
+        </activity>
+        <activity
+            android:name=".PropertyTypeQuestion"
+            android:label="@string/title_activity_property_type_question"
+            android:parentActivityName=".PaymentMethodQuestion" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="clifford.alan.lihctool.PaymentMethodQuestion" />
+        </activity>
+        <activity
+            android:name=".Pre1964Question"
+            android:label="@string/title_activity_pre1964_question"
+            android:parentActivityName=".PropertyTypeQuestion" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="clifford.alan.lihctool.PropertyTypeQuestion" />
+        </activity>
+        <activity
+            android:name=".NumberOfBedroomsQuestion"
+            android:label="@string/title_activity_number_of_bedrooms_question"
+            android:parentActivityName=".Pre1964Question" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="clifford.alan.lihctool.Pre1964Question" />
+        </activity>
+        <activity
+            android:name=".TenureQuestion"
+            android:label="@string/title_activity_tenure_question"
+            android:parentActivityName=".NumberOfBedroomsQuestion" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="clifford.alan.lihctool.NumberOfBedroomsQuestion" />
+        </activity>
+        <activity
+            android:name=".MainFuelQuestion"
+            android:label="@string/title_activity_main_fuel_question"
+            android:parentActivityName=".TenureQuestion" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="clifford.alan.lihctool.TenureQuestion" />
+        </activity>
+        <activity
+            android:name=".HotWaterQuestion"
+            android:label="@string/title_activity_hot_water_question"
+            android:parentActivityName=".MainFuelQuestion" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="clifford.alan.lihctool.MainFuelQuestion" />
+        </activity>
+    </application>
+
+</manifest>

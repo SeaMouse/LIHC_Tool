@@ -1,0 +1,78 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context="clifford.alan.lihctool.PaymentMethodQuestion">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:paddingRight="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="50dp"
+        android:background="@color/blue"
+        android:text="@string/appTitle"
+        android:gravity="end"
+        android:textColor="@color/white"
+        android:textSize="50sp"/>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/employmentQuestionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="30dp"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:text="@string/paymentQuestion"/>
+
+    <Button
+        android:id="@+id/directDebit"
+        android:layout_below="@id/employmentQuestionText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/directDebit"
+        android:textSize="25sp"
+        android:onClick="directDebit"/>
+
+    <Button
+        android:id="@+id/prePayment"
+        android:layout_below="@id/directDebit"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/prePayment"
+        android:textSize="25sp"
+        android:onClick="prePayment"/>
+
+    <Button
+        android:id="@+id/standardCredit"
+        android:layout_below="@id/prePayment"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/standardCredit"
+        android:textSize="25sp"
+        android:onClick="standardCredit"/>
+
+</RelativeLayout>
