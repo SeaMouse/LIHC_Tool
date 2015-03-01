@@ -19,7 +19,7 @@ public class MainActivity extends ActionBarActivity {
     public void start(View v) {
         // do something when the button is clicked
         // Create intent to open first question activity
-        customer.name="Alan";
+        customer.name="The Customer";
 
         Intent i = new Intent(this, employmentQuestion.class);
         startActivityForResult(i, REQUEST_CODE);
