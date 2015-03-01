@@ -64,4 +64,16 @@
         android:textSize="25sp"
         android:onClick="no"/>
 
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar4"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/no"
+        android:layout_alignStart="@+id/no"
+        android:layout_alignRight="@+id/no"
+        android:layout_alignEnd="@+id/no"
+        android:progress="36" />
+
 </RelativeLayout>

@@ -87,4 +87,17 @@
         android:textSize="25sp"
         android:onClick="retired"/>
 
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/progressBar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/retired"
+        android:layout_alignEnd="@+id/retired"
+        android:layout_alignLeft="@+id/retired"
+        android:layout_alignStart="@+id/retired"
+        android:progress="9"/>
+
+
 </RelativeLayout>

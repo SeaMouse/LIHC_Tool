@@ -97,4 +97,16 @@
         android:textSize="25sp"
         android:onClick="five"/>
 
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar8"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/five"
+        android:layout_alignStart="@+id/five"
+        android:layout_alignRight="@+id/five"
+        android:layout_alignEnd="@+id/five"
+        android:progress="73" />
+
 </RelativeLayout>

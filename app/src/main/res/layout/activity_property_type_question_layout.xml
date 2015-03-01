@@ -97,4 +97,16 @@
         android:textSize="25sp"
         android:onClick="bungalow"/>
 
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar6"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/bungalow"
+        android:layout_alignStart="@+id/bungalow"
+        android:layout_alignRight="@+id/bungalow"
+        android:layout_alignEnd="@+id/bungalow"
+        android:progress="55" />
+
 </RelativeLayout>
