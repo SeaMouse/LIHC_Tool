@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context="clifford.alan.lihctool.MainFuelQuestion">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/logo"
+        android:paddingTop="30dp"
+        android:paddingLeft="20dp"
+        android:background="@color/blue"
+        android:text="@string/appTitle"
+        android:textColor="@color/white"
+        android:textSize="45sp"/>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/ic_launcher" />
+
+
+    <TextView
+        android:id="@+id/fuelQuestionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="30dp"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:text="@string/fuelQuestion"/>
+
+    <Button
+        android:id="@+id/gas"
+        android:layout_below="@id/fuelQuestionText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/gas"
+        android:textSize="25sp"
+        android:onClick="gas"/>
+
+    <Button
+        android:id="@+id/electricity"
+        android:layout_below="@id/gas"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/electricity"
+        android:textSize="25sp"
+        android:onClick="electricity"/>
+
+    <Button
+        android:id="@+id/other"
+        android:layout_below="@id/electricity"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/other"
+        android:textSize="25sp"
+        android:onClick="other"/>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar10"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/other"
+        android:layout_alignStart="@+id/other"
+        android:layout_alignRight="@+id/other"
+        android:layout_alignEnd="@+id/other"
+        android:progress="91"
+        android:progressTint="#ffffffff"/>
+
+</RelativeLayout>
