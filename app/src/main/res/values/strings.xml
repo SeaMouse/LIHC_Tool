@@ -6,7 +6,7 @@
 
     <string name="appTitle">LIHC tool</string>
     <string name="text_welcomeTitle">Welcome to the LIHC tool</string>
-    <string name="text_welcomeText">The aim of this tool is to provide an indicative probability of being fuel poor given the selected set of characteristics below. This does not, however, lead to a definitive classification of fuel poverty.</string>
+    <string name="text_welcomeText">The aim of this tool is to provide an indication of whether a household is in fuel poverty using a set of key characteristics. This does not, however, lead to a definitive classification of fuel poverty.</string>
     <string name="button_start">Start</string>
     <string name="title_activity_employment_question">employmentQuestion</string>
     <string name="title_activity_partner_employment_question">PartnerEmploymentQuestion</string>
