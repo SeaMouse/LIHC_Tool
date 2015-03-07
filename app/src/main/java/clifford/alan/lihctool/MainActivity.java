@@ -47,7 +47,7 @@ public class MainActivity extends ActionBarActivity {
         // Create a blank intent and add the coefficient data
         Intent i = new Intent();
 
-        Integer test =20;
+        Integer test =10;
 
         // Complete the intent and call the next question
         switch (previousQuestion){
