@@ -56,7 +56,7 @@
 
     <!-- Bedrooms -->
     <string name="title_activity_number_of_bedrooms_question">NumberOfBedroomsQuestion</string>
-    <string name="bedroomsQuestion">How many bedrooms are there?</string>
+    <string name="bedroomsQuestion">Number of bedrooms:</string>
     <string name="one">One</string>
     <string name="two">Two</string>
     <string name="three">Three</string>

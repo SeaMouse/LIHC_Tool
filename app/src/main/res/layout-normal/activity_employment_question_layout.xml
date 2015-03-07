@@ -1,0 +1,104 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context="clifford.alan.lihctool.employmentQuestion">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/logo"
+        android:paddingTop="30dp"
+        android:paddingLeft="20dp"
+        android:background="@color/blue"
+        android:text="@string/appTitle"
+        android:textColor="@color/white"
+        android:textSize="45sp"/>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/ic_launcher" />
+
+
+    <TextView
+        android:id="@+id/employmentQuestionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="10dp"
+        android:paddingEnd="10dp"
+
+        android:paddingBottom="30dp"
+        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        android:text="@string/employmentQuestion"/>
+
+    <Button
+        android:id="@+id/employed"
+        android:layout_below="@id/employmentQuestionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/employed"
+        android:textSize="25sp"
+        android:onClick="employed"/>
+
+    <Button
+        android:id="@+id/unemployed"
+        android:layout_below="@id/employed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/unemployed"
+        android:textSize="25sp"
+        android:onClick="unemployed"/>
+
+    <Button
+        android:id="@+id/inactive"
+        android:layout_below="@id/unemployed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/inactive"
+        android:textSize="25sp"
+        android:onClick="inactive"/>
+
+    <Button
+        android:id="@+id/retired"
+        android:layout_below="@id/inactive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="@string/retired"
+        android:textSize="25sp"
+        android:onClick="retired"/>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/progressBar"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/retired"
+        android:layout_alignEnd="@+id/retired"
+        android:layout_alignLeft="@+id/retired"
+        android:layout_alignStart="@+id/retired"
+        android:progress="9"
+        android:progressTint="#ffffffff" />
+
+
+</RelativeLayout>

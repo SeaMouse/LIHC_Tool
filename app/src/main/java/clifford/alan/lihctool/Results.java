@@ -27,7 +27,7 @@ public class Results extends ActionBarActivity {
         }
 
         // Build the results message string
-        name += fuelPoor + " The overall probability is estimated at " + result + "%. The threshold for a household to be considered fuel poor is "+ THRESHOLD + "%.";
+        name += fuelPoor + " The overall probability is estimated at " + result + "%.\n\nThe threshold for a household to be considered fuel poor is "+ THRESHOLD + "%.";
 
         // Create the text view
         TextView results = (TextView) findViewById(R.id.resultsText);
