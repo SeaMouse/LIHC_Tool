@@ -3,7 +3,11 @@ package clifford.alan.lihctool;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -14,6 +18,7 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        customer.threshold=15;
     }
 
     public void start(View v) {
@@ -21,7 +26,17 @@ public class MainActivity extends ActionBarActivity {
         // Create intent to open first question activity
         customer.name="The Customer";
 
+
         Intent i = new Intent(this, employmentQuestion.class);
+        startActivityForResult(i, REQUEST_CODE);
+    }
+
+    public void settings(View v) {
+        // do something when the button is clicked
+        // Create intent to open first question activity
+
+        Intent i = new Intent(this, Settings.class);
+        i.putExtra("threshold",customer.threshold);
         startActivityForResult(i, REQUEST_CODE);
     }
 
@@ -34,10 +49,26 @@ public class MainActivity extends ActionBarActivity {
                 // Extract the coefficient and the question we have returned from
                 String returnQuestion = data.getExtras().getString("question");
                 Double returnCoefficient = data.getExtras().getDouble("returnCoefficient");
+                // Set new threshold if applicable
+                if (data.getExtras().containsKey("threshold")) {
+                    customer.threshold = data.getExtras().getInt("threshold");
+                    //TextView DEBUG = (TextView) findViewById(R.id.welcomeText);
+                    //DEBUG.setText(""+data.getExtras().getInt("threshold"));
+                } else {
+                    //TextView DEBUG = (TextView) findViewById(R.id.welcomeText);
+                    //DEBUG.setText(data.getExtras().toString());
+                }
+
                 // Pass the coefficient to the relevant customer attribute
-                customer.setCoefficient(returnQuestion, returnCoefficient);
+                if (data.getExtras().containsKey("returnCoefficient") && data.getExtras().containsKey("question")) {
+                    customer.setCoefficient(returnQuestion, returnCoefficient);
+                } else {
+                }
                 // Call the next question
-                nextQuestion(returnQuestion);
+                if (data.getExtras().containsKey("returnCoefficient") && data.getExtras().containsKey("question")) {
+                    nextQuestion(returnQuestion);
+                } else {
+                }
             }
         }
     }
@@ -46,8 +77,6 @@ public class MainActivity extends ActionBarActivity {
 
         // Create a blank intent and add the coefficient data
         Intent i = new Intent();
-
-        Integer test =10;
 
         // Complete the intent and call the next question
         switch (previousQuestion){
@@ -105,13 +134,20 @@ public class MainActivity extends ActionBarActivity {
                 customer.sumCoefficients();
                 i.putExtra("customerName", customer.name);
                 i.putExtra("LIHC_status", customer.probability);
+                i.putExtra("threshold", customer.threshold);
                 i.setClass(this, Results.class);
                 startActivityForResult(i, REQUEST_CODE);
                 break;
 
             case "results":
-                i.setClass(this,MainActivity.class);
-                startActivityForResult(i, REQUEST_CODE);
+                //i.setClass(this,MainActivity.class);
+                //startActivityForResult(i, REQUEST_CODE);
+                break;
+
+            case "settings":
+                //i.setClass(this,MainActivity.class);
+                //startActivityForResult(i, REQUEST_CODE);
+
                 break;
         }
 

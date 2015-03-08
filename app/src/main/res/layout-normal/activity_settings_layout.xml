@@ -1,0 +1,73 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context="clifford.alan.lihctool.Settings">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/logo"
+        android:paddingTop="30dp"
+        android:paddingLeft="20dp"
+        android:background="@color/blue"
+        android:text="@string/appTitle"
+        android:textColor="@color/white"
+        android:textSize="45sp"/>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:scaleType="fitCenter"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Set the fuel poverty threshold:"
+        android:textColor="@color/white"
+        android:id="@+id/setThresholdText"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="40dp" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar"
+        android:layout_marginTop="30dp"
+        android:progress="15"
+        android:max="100"
+        android:onClick="updateThreshold"
+        android:layout_below="@+id/setThresholdText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Medium Text"
+        android:id="@+id/threshold"
+        android:layout_below="@+id/seekBar"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:id="@+id/button"
+        android:layout_below="@+id/threshold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:onClick="back"/>
+
+
+</RelativeLayout>

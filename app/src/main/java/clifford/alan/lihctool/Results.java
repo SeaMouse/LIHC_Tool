@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 public class Results extends ActionBarActivity {
 
-    static Integer THRESHOLD = 15;
+    Integer threshold;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -19,15 +19,16 @@ public class Results extends ActionBarActivity {
         Intent i = getIntent();
         String name = i.getExtras().getString("customerName");
         Long result = i.getExtras().getLong("LIHC_status");
+        threshold = i.getExtras().getInt("threshold");
         String fuelPoor = " is unlikely to be living in fuel poverty.";
 
         // Determine if likely fuel poor
-        if(result >= THRESHOLD){
+        if(result >= threshold){
             fuelPoor=" is likely to be living in fuel poverty.";
         }
 
         // Build the results message string
-        name += fuelPoor + " The overall probability is estimated at " + result + "%.\n\nThe threshold for a household to be considered fuel poor is "+ THRESHOLD + "%.";
+        name += fuelPoor + " The overall probability is estimated at " + result + "%.\n\nThe threshold for a household to be considered fuel poor is "+ threshold + "%.";
 
         // Create the text view
         TextView results = (TextView) findViewById(R.id.resultsText);
