@@ -6,6 +6,7 @@ package clifford.alan.lihctool;
 
 public class Customer {
 
+        public Integer threshold=15;
 
         public String name;
         public Double employmentStatus = 0.0;
@@ -80,7 +81,6 @@ public class Customer {
 
                 case "hotWater": this.hotWater = coefficient;
                     break;
-
             }
 
 
