@@ -15,14 +15,16 @@ public class Results extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results_layout);
 
-        // Get the message from the intent
+        // Get the results data from the intent
         Intent i = getIntent();
         String name = i.getExtras().getString("customerName");
         Long result = i.getExtras().getLong("LIHC_status");
         threshold = i.getExtras().getInt("threshold");
+
+        // string fragment for overall status
         String fuelPoor = " is unlikely to be living in fuel poverty.";
 
-        // Determine if likely fuel poor
+        // Change the message if they are above the threshold
         if(result >= threshold){
             fuelPoor=" is likely to be living in fuel poverty.";
         }
@@ -40,9 +42,9 @@ public class Results extends ActionBarActivity {
         finish();
     }
 
+    // Return to start screen - the bundled data is not used
     public void finish() {
         Intent data = new Intent();
-
         data.putExtra("returnCoefficient", 0.0);
         data.putExtra("question", "results");
         setResult(RESULT_OK, data);

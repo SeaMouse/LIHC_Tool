@@ -3,11 +3,7 @@ package clifford.alan.lihctool;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -25,7 +21,6 @@ public class MainActivity extends ActionBarActivity {
         // do something when the button is clicked
         // Create intent to open first question activity
         customer.name="The Customer";
-
 
         Intent i = new Intent(this, employmentQuestion.class);
         startActivityForResult(i, REQUEST_CODE);
@@ -52,23 +47,17 @@ public class MainActivity extends ActionBarActivity {
                 // Set new threshold if applicable
                 if (data.getExtras().containsKey("threshold")) {
                     customer.threshold = data.getExtras().getInt("threshold");
-                    //TextView DEBUG = (TextView) findViewById(R.id.welcomeText);
-                    //DEBUG.setText(""+data.getExtras().getInt("threshold"));
-                } else {
-                    //TextView DEBUG = (TextView) findViewById(R.id.welcomeText);
-                    //DEBUG.setText(data.getExtras().toString());
                 }
 
                 // Pass the coefficient to the relevant customer attribute
-                if (data.getExtras().containsKey("returnCoefficient") && data.getExtras().containsKey("question")) {
+                //if (data.getExtras().containsKey("returnCoefficient") && data.getExtras().containsKey("question")) {
                     customer.setCoefficient(returnQuestion, returnCoefficient);
-                } else {
-                }
+                //}
+
                 // Call the next question
-                if (data.getExtras().containsKey("returnCoefficient") && data.getExtras().containsKey("question")) {
+                //if (data.getExtras().containsKey("returnCoefficient") && data.getExtras().containsKey("question")) {
                     nextQuestion(returnQuestion);
-                } else {
-                }
+                //}
             }
         }
     }
@@ -147,7 +136,6 @@ public class MainActivity extends ActionBarActivity {
             case "settings":
                 //i.setClass(this,MainActivity.class);
                 //startActivityForResult(i, REQUEST_CODE);
-
                 break;
         }
 

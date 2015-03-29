@@ -56,8 +56,8 @@ public class Settings extends ActionBarActivity {
 
     public void finish() {
         Intent data = new Intent();
-        //data.putExtra("returnCoefficient", 0.0);
-        //data.putExtra("question", "settings");
+        data.putExtra("returnCoefficient", 0.0);
+        data.putExtra("question", "settings");
         data.putExtra("threshold", threshold);
         setResult(RESULT_OK, data);
         super.finish();

@@ -4,11 +4,14 @@ package clifford.alan.lihctool;
  * Created by Alan Clifford on 28/02/2015.
  */
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Customer {
 
         public Integer threshold=15;
-
         public String name;
+
         public Double employmentStatus = 0.0;
         public Double partnerEmploymentStatus= 0.0;
         public Double meansTestedBenefits= 0.0;
@@ -22,12 +25,14 @@ public class Customer {
         public Double mainFuel = 0.0;
         public Double hotWater = 0.0;
 
-        public Double constant = -6.43873151155755;
+        public Double constant = -6.4387;
 
         public Double sumOfCoefficients= 0.0;
         public Long probability;
+        //public Double probability;
 
         public Long sumCoefficients(){
+            sumOfCoefficients=0.0;
             sumOfCoefficients += employmentStatus;
             sumOfCoefficients += partnerEmploymentStatus;
             sumOfCoefficients += meansTestedBenefits;
@@ -41,7 +46,13 @@ public class Customer {
             sumOfCoefficients += hotWater;
             sumOfCoefficients += constant;
 
-            probability = Math.round(100*(Math.exp(sumOfCoefficients)/(1+Math.exp(sumOfCoefficients))));
+            sumOfCoefficients = round(sumOfCoefficients,5);
+
+            //=EXP(F62)/(1+EXP(F62))
+            Double roundedExpOfCoefficient = round(Math.exp(sumOfCoefficients), 5);
+            Double dblProbability = roundedExpOfCoefficient/(1+roundedExpOfCoefficient);
+            dblProbability = 100*round(dblProbability,2);
+            probability = Math.round(dblProbability);
 
             return probability;
         }
@@ -55,7 +66,7 @@ public class Customer {
                 case "partnerEmployment": this.partnerEmploymentStatus = coefficient;
                 break;
 
-                case "meansTestedBenefits": this.meansTestedBenefits = coefficient;
+                case "meansTestedBenefit": this.meansTestedBenefits = coefficient;
                 break;
 
                 case "disability": this.disabilityBenefits = coefficient;
@@ -68,21 +79,27 @@ public class Customer {
                 break;
 
                 case "pre1964": this.pre1964 = coefficient;
-                    break;
+                break;
 
                 case "bedrooms": this.bedrooms = coefficient;
-                    break;
+                break;
 
                 case "tenure": this.tenure = coefficient;
-                    break;
+                break;
 
                 case "fuel": this.mainFuel = coefficient;
-                    break;
+                break;
 
                 case "hotWater": this.hotWater = coefficient;
-                    break;
+                break;
             }
-
-
         }
+
+    public static double round(double value, int places) {
+        if (places < 0) throw new IllegalArgumentException();
+
+        BigDecimal bd = new BigDecimal(value);
+        bd = bd.setScale(places, RoundingMode.HALF_UP);
+        return bd.doubleValue();
+    }
 }
