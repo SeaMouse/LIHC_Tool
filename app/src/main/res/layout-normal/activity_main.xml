@@ -17,7 +17,8 @@
         android:background="@color/blue"
         android:text="@string/appTitle"
         android:textColor="@color/white"
-        android:textSize="45sp"/>
+        android:textSize="45sp"
+        android:id="@+id/textView" />
 
     <ImageView
         android:id="@+id/logo"
@@ -77,14 +78,7 @@
         android:layout_marginRight="60dp"
         android:text="@string/button_settings"
         android:textSize="18sp"
-        android:onClick="settings"/>
-
-    <TextView
-        android:id="@+id/test"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/start"
-        android:textColor="@color/white"
-        android:textSize="22sp"/>
+        android:onClick="settings"
+        android:id="@+id/button2" />
 
 </RelativeLayout>
